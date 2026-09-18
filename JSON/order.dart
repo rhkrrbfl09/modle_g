@@ -10,25 +10,26 @@ class Order {
     required this.orderId,
     required this.orderedAt,
     required this.status,
-    required this.totalPrice, 
-    required this.memo, 
+    required this.totalPrice,
+    required this.memo,
     this.coupon,
   });
+
   factory Order.fromJson(Map<String, dynamic> json) => Order(
     orderId: json['orderId'] as int,
     orderedAt: json['orderedAt'] as String,
     status: json['status'] as String,
     totalPrice: (json['totalPrice'] as num).toDouble(),
-    memo: json['memo'] as String, 
-    coupon: json['coupon'] as String?
+    memo: json['memo'] as String,
+    coupon: json['coupon'] as String?,
   );
 
   Map<String, dynamic> toJson() => {
     'orderId': orderId,
     'orderedAt': orderedAt,
     'status': status,
-    'totalPrice': totalPrice, 
-    'memo' : memo, 
+    'totalPrice': totalPrice,
+    'memo': memo,
     'coupon': coupon,
   };
 }
@@ -57,7 +58,7 @@ class Customer {
     'id': id,
     'name': name,
     'email': email,
-    if (phone != null) 'phone': phone, // null 이면 아예 빼기
+    if (phone != null) 'phone': phone,
   };
 }
 
@@ -126,9 +127,5 @@ class Address {
     detail: json['detail'] as String,
   );
 
-  Map<String, dynamic> toJson() => {
-    'zip': zip, 
-    'city': city, 
-    'detail': detail, 
-  };
+  Map<String, dynamic> toJson() => {'zip': zip, 'city': city, 'detail': detail};
 }

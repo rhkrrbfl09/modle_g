@@ -25,12 +25,13 @@ class Todo {
         .map((dynamic e) => e as String)
         .toList(),
   );
+
   Map<String, dynamic> toJson() => {
-    'id' : id, 
-    'title': title, 
-    'done' : done, 
+    'id': id,
+    'title': title,
+    'done': done,
     'priority': priority,
-    'dueDate' : dueDate, 
-    'tags' : tags,
+    'dueDate': dueDate,
+    'tags': tags,
   };
 }
